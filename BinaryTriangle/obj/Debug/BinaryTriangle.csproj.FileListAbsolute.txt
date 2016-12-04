@@ -1,0 +1,9 @@
+C:\Programming\BinaryTriangle\BinaryTriangle\bin\Debug\BinaryTriangle.exe.config
+C:\Programming\BinaryTriangle\BinaryTriangle\bin\Debug\BinaryTriangle.exe
+C:\Programming\BinaryTriangle\BinaryTriangle\bin\Debug\BinaryTriangle.pdb
+C:\Programming\BinaryTriangle\BinaryTriangle\obj\Debug\BinaryTriangle.csprojResolveAssemblyReference.cache
+C:\Programming\BinaryTriangle\BinaryTriangle\obj\Debug\BinaryTriangle.exe
+C:\Programming\BinaryTriangle\BinaryTriangle\obj\Debug\BinaryTriangle.pdb
+C:\Programming\Git_Stuff\BinaryTriangle\BinaryTriangle\bin\Debug\BinaryTriangle.exe.config
+C:\Programming\Git_Stuff\BinaryTriangle\BinaryTriangle\obj\Debug\BinaryTriangle.exe
+C:\Programming\Git_Stuff\BinaryTriangle\BinaryTriangle\obj\Debug\BinaryTriangle.pdb
