@@ -13,8 +13,8 @@ namespace BinaryTriangle {
 
       WriteLine("Enter a phrase to convert to binary...");
       var userInput = ReadLine();
-      var triangleBaseLength = int.MinValue;
       var userInputToBinary = new StringBuilder();
+      var addSymbolToBeginningOfUserInputToBinary = new StringBuilder();
       var temp1 = 0;
       var temp2 = 1;
 
@@ -28,6 +28,9 @@ namespace BinaryTriangle {
       WriteLine(userInputToBinary.Length);
       int lengthOfUserInputToBinary = userInputToBinary.Length;
 
+      //Gets the triangle number sequence. sequence shows how many "characters" total to make a complete triangle.
+      //first row has one, second row has 2, third row has three etc....
+
       listOfTriSequence.Add(temp2);
       while (listOfTriSequence.Max() <= lengthOfUserInputToBinary) {
         var temp = temp2 - temp1;
@@ -40,16 +43,28 @@ namespace BinaryTriangle {
         }
         listOfTriSequence.Add(temp2);
       }
+      
+      //created a tempUserInputToBinaryLength variable to hold the value of how many characters is needed to fill in
+      //the different between listOfTriSequence.Max() and userInputToBinary.Length (if applicable).  in order to make
+      //a complete triangle the value needs to equal a value in the triangle number sequence. 
+      //example ::  https://en.wikipedia.org/wiki/Triangular_number
 
-      var maxSequenceValue = listOfTriSequence.Max();
+      var tempUserInputToBinaryLength = userInputToBinary.Length;
 
-      while (lengthOfUserInputToBinary != maxSequenceValue) {
-        lengthOfUserInputToBinary += 1;
+      while (tempUserInputToBinaryLength < listOfTriSequence.Max()) {
+        addSymbolToBeginningOfUserInputToBinary.Append("*");
+        tempUserInputToBinaryLength += 1;
+
+        if (addSymbolToBeginningOfUserInputToBinary.Length + userInputToBinary.Length == listOfTriSequence.Max()) {
+          addSymbolToBeginningOfUserInputToBinary.Append(userInputToBinary);
+          break;
+        }
       }
-
-      for (int i = 0; i < listOfTriSequence.Max(); i++) {
-
-      }
+      WriteLine(addSymbolToBeginningOfUserInputToBinary.ToString());
+      var stringSymbolsAndUserInputToBinary = addSymbolToBeginningOfUserInputToBinary.ToString();
+      //foreach (char ch in stringSymbolsAndUserInputToBinary) {
+      //  WriteLine(stringSymbolsAndUserInputToBinary);
+      //}
 
       ReadKey();
     }
