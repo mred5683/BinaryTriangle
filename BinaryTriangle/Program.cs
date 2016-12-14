@@ -11,13 +11,13 @@ namespace BinaryTriangle {
 
     public static void Main() {
 
-      WriteLine("Enter a phrase to convert to binary...");
+      WriteLine("Enter text to convert to binary...");
       var userInput = ReadLine();
       var userInputToBinary = new StringBuilder();
 
+      //check if userInput is null.  if it is, then it prompts the user to enter valid text.  
+      //if it isn't, then it converts userInput to Binary.
 
-
-      //convert userInput to Binary.
       if (userInput == null) {
         WriteLine("must enter valid text...");
         Main();
@@ -26,8 +26,7 @@ namespace BinaryTriangle {
       else {
         foreach (var ch in userInput) userInputToBinary.Append(Convert.ToString(ch, 2));
       }
-
-      WriteLine(userInputToBinary.Length);
+      
       int lengthOfUserInputToBinary = userInputToBinary.Length;
 
       //Gets the triangle number sequence. sequence shows how many "characters" total to make a complete triangle.
@@ -68,44 +67,27 @@ namespace BinaryTriangle {
           break;
         }
       }
+      
+      var stringSplatAndUserInputToBinary = addSymbolToBeginningOfUserInputToBinary.ToString();
+      var DictOfChars = new Dictionary<int,string>();
+      var count = 0;
 
-      WriteLine(addSymbolToBeginningOfUserInputToBinary.ToString());
-      var appendedSymbolsAndUserInputToBinary = addSymbolToBeginningOfUserInputToBinary.ToString();
-
-      //while (temp < temp1) {
-      //  var temp = 0;
-      //  var temp1 = 0;
-      //  var temp2 = 0;
-      //}
-
-      //foreach (char ch in stringSymbolsAndUserInputToBinary) {
-      //  WriteLine(stringSymbolsAndUserInputToBinary);
-      //}
-
+      foreach (char ch in stringSplatAndUserInputToBinary) {
+        DictOfChars.Add(count,ch.ToString());
+        count += 1;
+      }
+      
+      //number of rows equals listOfTriSequence.Count
+      count = 0;
+      for (int i = 1; i < listOfTriSequence.Count + 1; i++) {
+        for (int j = 0; j < i; j++) {
+          Write(DictOfChars[count]);
+          DictOfChars.Remove(count);
+          count += 1;
+        }
+        Write("\n");
+      }
       ReadKey();
     }
-
-
-    ////Code for creating a triangle with alternating 0's and 1's
-    
-    //int p, lastInt = 0, input;
-    //WriteLine("Enter the Number of Rows : ");
-    //input = int.Parse(ReadLine());
-    //for (var i = 1; i <= input; i++) {
-    //  for (p = 1; p <= i; p++)
-    //    if (lastInt == 1) {
-    //      Write("0");
-    //      lastInt = 0;
-    //    }
-    //    else if (lastInt == 0) {
-    //      Write("1");
-    //      lastInt = 1;
-    //    }
-
-    //  Write("\n");
-    //}
-
-    //ReadLine();
-
   }
 }
